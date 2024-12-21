@@ -1,0 +1,9 @@
+.container-covers {
+  width: 1440px;
+  height: 960px;
+  backdrop-filter: blur(30px);
+  background-image: 
+    url(../img/covers/Rectangle\ 13-comp.png);
+ 
+  
+}
