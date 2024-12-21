@@ -2,15 +2,19 @@ import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
 new Accordion('#faq-accordion', {
-  duration: 400,
+  duration: 600,
   showOne: true,
   showMultiple: true,
   collapse: true,
 });
 const headers = document.querySelectorAll('.accordion-header');
 headers.forEach(item => {
+  item.addEventListener('click', event => {
+    toggleAccordion(item);
+  });
   const svg = item.querySelector('svg');
   svg.addEventListener('click', event => {
+    event.stopPropagation();
     toggleAccordion(item);
   });
 });
@@ -18,19 +22,22 @@ function toggleAccordion(item) {
   const body = item.nextElementSibling;
   document.querySelectorAll('.accordion-body').forEach(content => {
     if (content !== body) {
-      content.style.display = 'none';
-      content.style.visibility = 'hidden';
+      console.log(body);
+      content.classList.remove('visible');
       const siblingHeader = content.previousElementSibling;
       siblingHeader.querySelector('svg').style.transform = 'rotate(0deg)';
+      siblingHeader.querySelector('svg').style.transitionDuration = '500ms';
     }
   });
-  if (body.style.display === 'block') {
-    body.style.display = 'none';
-    body.style.visibility = 'hidden';
+  if (body.classList.contains('visible')) {
+    body.classList.remove('visible');
     item.querySelector('svg').style.transform = 'rotate(0deg)';
+    item.querySelector('svg').style.transitionDuration = '500ms';
   } else {
-    body.style.display = 'block';
-    body.style.visibility = 'visible';
     item.querySelector('svg').style.transform = 'rotate(180deg)';
+    item.querySelector('svg').style.transitionDuration = '500ms';
+    setTimeout(() => {
+      body.classList.add('visible');
+    }, 250);
   }
 }
