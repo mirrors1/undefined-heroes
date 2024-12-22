@@ -23,6 +23,70 @@
     position: relative;
 }
 
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.slide-in-right {
+    animation: slideInFromRight 0.6s ease-out;
+}
+
+.slide-out-left {
+    animation: slideOutToLeft 0.6s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 0.6s ease-out;
+}
+
+.slide-out-right {
+    animation: slideOutToRight 0.6s ease-out;
+}
+
 .li-cards {
     display: flex;
     flex-wrap: wrap;
