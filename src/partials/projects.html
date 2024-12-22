@@ -4,14 +4,14 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Projects</title>
   </head>
   <body>
     <section class="section projects-section" id="projects">
       <div class="container">
         <h3 class="title-projects">Projects</h3>
         <ul class="ul-cards-list">
-          <li class="li-cards">
+          <li class="li-cards active">
             <div class="first-block">
               <ul class="ul-tech-list">
                 <li class="li-tech-list">
@@ -42,13 +42,6 @@
 
             <div class="second-block">
               <picture class="img-block">
-                <source
-                  srcset="
-                    ../img/projects/tab-slide1.png    1x,
-                    ../img/projects/tab-slide1@2x.png 2x
-                  "
-                  media="(min-width:1440px)"
-                />
                 <source
                   srcset="
                     ../img/projects/tab-slide1.png    1x,
@@ -66,7 +59,7 @@
                 <img
                   class="img-projects"
                   src="../img/projects/mb-slide1.png"
-                  alt="First image"
+                  alt="Project preview"
                 />
               </picture>
             </div>
@@ -92,6 +85,7 @@
               <h2 class="h-two-title-projects">
                 Programming Across Borders: Ideas, Technologies, Innovations
               </h2>
+
               <a
                 href="https://github.com/Vladyslav-Tykhyi/undefined-heroes"
                 target="_blank"
@@ -107,31 +101,24 @@
                     ../img/projects/tab-slide2.png    1x,
                     ../img/projects/tab-slide2@2x.png 2x
                   "
-                  third
-                  media="(min-width:1440px)"
-                />
-                <source
-                  srcset="
-                    ../img/projects/tab-slide3.png    1x,
-                    ../img/projects/tab-slide3@2x.png 2x
-                  "
                   media="(min-width:768px)"
                 />
                 <source
                   srcset="
-                    ../img/projects/mb-slide3.png    1x,
-                    ../img/projects/mb-slide3@2x.png 2x
+                    ../img/projects/mb-slide2.png    1x,
+                    ../img/projects/mb-slide2@2x.png 2x
                   "
                   media="(min-width:375px)"
                 />
                 <img
                   class="img-projects"
-                  src="../img/projects/mb-slide3.png"
-                  alt="Second image"
+                  src="../img/projects/mb-slide2.png"
+                  alt="Project preview"
                 />
               </picture>
             </div>
           </li>
+
           <li class="li-cards visually-hidden">
             <div class="first-block">
               <ul class="ul-tech-list">
@@ -152,6 +139,7 @@
               <h2 class="h-two-title-projects">
                 Programming Across Borders: Ideas, Technologies, Innovations
               </h2>
+
               <a
                 href="https://github.com/Vladyslav-Tykhyi/undefined-heroes"
                 target="_blank"
@@ -162,13 +150,6 @@
 
             <div class="second-block">
               <picture class="img-block">
-                <source
-                  srcset="
-                    ../img/projects/tab-slide3.png    1x,
-                    ../img/projects/tab-slide3@2x.png 2x
-                  "
-                  media="(min-width:1440px)"
-                />
                 <source
                   srcset="
                     ../img/projects/tab-slide3.png    1x,
@@ -186,7 +167,7 @@
                 <img
                   class="img-projects"
                   src="../img/projects/mb-slide3.png"
-                  alt="Third image"
+                  alt="Project preview"
                 />
               </picture>
             </div>
@@ -194,12 +175,12 @@
         </ul>
 
         <div class="block-btn-scroll">
-          <button class="btn-scroll btn-prev">
+          <button class="btn-scroll btn-prev" aria-label="Previous project">
             <svg class="svg-icon-scrool" width="32" height="32">
               <use href="../img/icons.svg#icon-arrow-left"></use>
             </svg>
           </button>
-          <button class="btn-scroll btn-next">
+          <button class="btn-scroll btn-next" aria-label="Next project">
             <svg class="svg-icon-scrool" width="32" height="32">
               <use href="../img/icons.svg#icon-arrow-right"></use>
             </svg>
@@ -208,6 +189,6 @@
       </div>
     </section>
 
-    <script src="../main.js"></script>
+    <script type="module" src="../js/projects.js"></script>
   </body>
 </html>
