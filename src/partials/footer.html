@@ -1,10 +1,10 @@
-<footer>
+<footer id="footer" class="footer">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="footer-container">
-                <div class="footer-common">
-                   <picture>
+            <div class="footer-common">
+                <h2 class="footer-common-text">
+                    <picture>
                     <source
                     srcset="./img/footer/tab-hero-footer.png 1x, 
                     ./img/footer/tab-hero-footer@2.png 2x" 
@@ -23,33 +23,51 @@
                     alt="Junior Frontend-developer"
                     />
                    </picture>
-                    <h2 class="footer-common-text">let's <span class="span-work">work </span>
-                    </h2>
-                    <h2 class="footer-common-text">together</h2>
-                </div>
-    
-                <form class="footer-form-wrapper" action="">     
-                        <div class="footer-input">
-                            <div class="input-option">
-                                <input class="footer-form-input" type="email" autocomplete="off" pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required name="email" placeholder="clients@gmail.com">
-                                <span class="succes succes-is-hidden">Success!</span>
-                                <span class="invalid invalid-is-hidden">Invalid email, try again</span>
-                            </div>
-                                <input class="footer-form-input" type="text" autocomplete="off" required name="comment" placeholder="comments">
-                        </div>
-                        <button class="footer-form-button" type="submit">Send</button>
-                </form>
-
-                <address class="address">
-                    <ul class="address-list">
-                        <li class="address-item">
-                            <a class="address-link" href="mailto:lloudjefferson@gmail.com">lloudjefferson@gmail.com</a>
-                        </li>
-                        <li class="address-item">
-                            <a class="address-link" href="tel:+3801111111111">+380 11 1111 11 11</a>
-                        </li>
-                    </ul>
-                </address>
+                   let's <span class="span-work">work </span>together
+                </h2>
             </div>
-    </div>
+
+            <form class="form"> 
+                
+                <div class="form-group-email">
+                    <label class="form-label-email" for="email"></label>
+                    <input class="footer-form-input"
+                    name="email"
+                    value="clients@gmail.com"
+                    type="email" 
+                    autocomplete="off" 
+                    id="email" placeholder="clients@gmail.com" 
+                    pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"/>
+                    <span class="succes succes-is-hidden">Success!</span>
+                    <span class="invalid invalid-is-hidden">Invalid email, try again</span>
+                </div>
+
+                <div class="form-group-comments">
+                    <label class="form-label-comments" for="comments"></label>
+                    <input class="footer-form-input"
+                    name="comments" 
+                    value="lalala"
+                    id="comments" 
+                    type="text" 
+                    autocomplete="off" 
+                    placeholder="comments">
+                </div>
+
+                    <button class="footer-form-button" type="submit">Send</button>
+            </form>
+
+            <address class="address">
+                <ul class="address-list">
+                    <li class="address-item">
+                        <a class="address-link" href="mailto:lloudjefferson@gmail.com">lloudjefferson@gmail.com</a>
+                    </li>
+                    <li class="address-item">
+                        <a class="address-link" href="tel:+3801111111111">+380 11 1111 11 11</a>
+                    </li>
+                </ul>
+            </address>
+    
+</div>
 </footer>
+
+>

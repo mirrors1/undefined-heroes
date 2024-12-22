@@ -6,5 +6,5 @@ import './js/projects';
 import './js/fag';
 import './js/covers';
 import './js/reviews';
-import './js/reviews';
+import './js/footer';
 import './js/modal-w';
