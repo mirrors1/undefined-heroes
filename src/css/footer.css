@@ -2,14 +2,14 @@
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
-    background-image: url('../img/footer/mob-bg.png'); 
+    background-image: url('/img/footer/mob-bg.png'); 
 }
 
 @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       .footer {
-        background-image: url('../img/footer/mob-bg@2x.png');
+        background-image: url('/img/footer/mob-bg@2x.png');
       }
     }
 
@@ -27,7 +27,7 @@ flex-direction: row;
 flex-wrap: wrap;
 gap: 4px 8px;
 font-weight: 500;
-margin-bottom: 64px;
+/* margin-bottom: 64px; */
 font-size: 40px;
 line-height: 100%;
 letter-spacing: -0.03em;
@@ -60,8 +60,44 @@ height: 44px;
 }
 
 .form-group-comments {
-    margin-bottom: 32px;
+    margin-bottom: 32px; 
 }
+
+.input-wrapper {
+    width: 100%;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+
+.footer-form-input { 
+    background-color: inherit;
+    width: 100%;
+    border: none;
+    padding: 0 0 26px 0;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.6);
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: #FAFAFA;
+    transition: background-color 0.3s ease;
+    margin-bottom: 4px;
+    }
+    
+    .footer-form-input:hover,
+    .footer-form-input:focus {
+        outline: none; 
+        border: none;
+        border-bottom: 1px solid #FAFAFA;
+    }
+    
+    input::placeholder {
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.02em;
+    color: rgba(250, 250, 250, 0.6);
+    padding-top: 0;
+    padding-left: 0;
+    }
 
 .succes {
 font-size: 14px;
@@ -83,37 +119,6 @@ color: #e74a3b;
 
 .succes-is-hidden {
     display: none;
-}
-
-.footer-form-input {
-box-sizing: border-box;
-background-color: inherit;
-width: 245px;
-height: 44px;
-border: none;
-padding: 0;
-border-bottom: 1px solid rgba(250, 250, 250, 0.6);
-font-size: 16px;
-line-height: 44px;
-letter-spacing: -0.02em;
-color: #FAFAFA;
-transition: background-color 0.3s ease;
-}
-
-.footer-form-input:hover,
-.footer-form-input:focus {
-    outline: none; 
-    border: none;
-    border-bottom: 1px solid #FAFAFA;
-}
-
-input::placeholder {
-font-size: 16px;
-line-height: 150%;
-letter-spacing: -0.02em;
-color: rgba(250, 250, 250, 0.6);
-padding-top: 0;
-padding-left: 0;
 }
 
 .footer-form-button {
@@ -170,20 +175,20 @@ transition: background-color 0.3s ease;
         background-repeat: no-repeat;
         background-position: right;
         background-size: contain;
-        background-image: url('../img/footer/tab-bg.png'); 
+        background-image: url('/img/footer/tab-bg.png'); 
     }
     
     @media (min-device-pixel-ratio: 2),
           (min-resolution: 192dpi),
           (min-resolution: 2dppx) {
           .footer {
-            background-image: url('../img/footer/tab-bg@2x.png');
+            background-image: url('/img/footer/tab-bg@2x.png');
           }
         }
 
-        .container{
-            padding: 80px 32px 169px 32px;
-        }
+    .container{
+        padding: 80px 32px 169px 32px;
+    }
 
     .footer-common {
         margin-bottom: 18px;
@@ -210,6 +215,10 @@ transition: background-color 0.3s ease;
         margin-bottom: 0;
         margin-right: 32px;
     }
+
+    .footer-form-input {
+        width: 245px;
+    }
     
     .form-group-comments {
         margin-bottom: 0;
@@ -225,11 +234,11 @@ transition: background-color 0.3s ease;
         font-size: 16px;
         height: 55px;
         padding: 18px 32px;
-        }
+    }
 
-        .address-list {
-            gap: 8px;
-        }
+    .address-list {
+        gap: 8px;
+    }
 
 }
   
@@ -241,7 +250,7 @@ transition: background-color 0.3s ease;
     }
 
     .footer {
-        background-image: url('../img/footer/bg.png'); 
+        background-image: url('/img/footer/bg.png'); 
         
     }
     
@@ -249,7 +258,7 @@ transition: background-color 0.3s ease;
           (min-resolution: 192dpi),
           (min-resolution: 2dppx) {
           .footer {
-            background-image: url('../img/footer/bg@2x.png');
+            background-image: url('/img/footer/bg@2x.png');
           }
         }
 
@@ -275,5 +284,101 @@ transition: background-color 0.3s ease;
         width: 550px;
     }    
 }
+
+/* modal */
+
+.backdrop {
+    position: fixed;
+    background-color: rgba(15, 15, 16, 0.6);;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: visibility 300ms linear, opacity 300ms linear, pointer-events 300ms linear;
+}
+
+.backdrop.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    position: absolute;
+    position: relative;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 343px;
+    height: 276px;
+    background-color: var(--background);
+    z-index: 1000; 
+    transition: opacity 0.3s ease; 
+    border: 1px solid rgba(250, 250, 250, 0.1);
+    border-radius: 20px;
+    padding: 64px 32px;
+}
+
+.modal-close-btn {
+    background-color: none;
+    border: none; 
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    cursor: pointer;
+    background: transparent;
+    transition: border 0.3s ease;
+    display: inline-flex;
+}
+
+.modal-close-btn:hover {
+  border: 1px solid #FAFAFA;
+  border-radius: 20px;
+}
+
+.modal-title {
+font-weight: 500;
+font-size: 20px;
+line-height: 150%;
+letter-spacing: -0.02em;
+text-align: center;
+color: #FAFAFA;
+margin-bottom: 16px;
+}
+
+.modal-text {
+font-weight: 300;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.02em;
+text-align: center;
+color: rgba(250, 250, 250, 0.6);
+}
+
+@media screen and (min-width:768px){
+
+    .modal {
+        padding: 64px;
+        width: 492px;
+        height: 246px;
+        background: var(--background);
+        position: relative; 
+        padding: 64px 64px;
+    }
+}
+
+@media screen and (min-width:1140px){
+    
+}
+
+
 
 
