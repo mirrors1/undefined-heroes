@@ -53,13 +53,14 @@
   opacity: 1;
 }
 .faq-list .ac .ac-trigger {
-  border: 1px solid rgba(250, 250, 250, 0.2);
+  outline: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
   padding: 7px;
   width: 34px;
   height: 34px;
   background-color: var(--background);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
 }
 .faq-list .ac .ac-trigger::after {
   content: none;
@@ -79,6 +80,11 @@
   }
   #faq-accordion .accordion-body {
     max-width: 656px;
+  }
+  .faq-list .ac .ac-trigger {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
   }
 }
 @media screen and (min-width: 1440px) {
