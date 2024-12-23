@@ -48,7 +48,7 @@ const gradients = [
   'linear-gradient(270deg, #1c1d20 49.68%, #596808 67.73%, rgba(198, 227, 39, 0.76) 100%)',
   'linear-gradient(270deg, #1c1d20 49.68%, #9f3626 67.73%, #e6533c 100%)',
   'linear-gradient(270deg, #1c1d20 49.68%, #ac5300 67.73%, #ff7f08 100%)',
-  'linear-gradient(270deg, #1c1d20 49.68%, #ac5300 67.73%, #ff7f08 100%, #ff7f08 100%)'
+  'linear-gradient(270deg, #1c1d20 49.68%, #ac5300 67.73%, #ff7f08 100%, #ff7f08 100%)',
 ];
 // Масиви зображень
 const mobileBackgroundImages = [
@@ -105,6 +105,43 @@ const highResDesktopImages = [
   warmRedDesktopBg2x,
 ];
 
+//!!
+import smallBlue from '/img/hero/modal/modal-blue.png';
+import bigBlue from '/img/hero/modal/modal-blue@2x.png';
+import smallDarkGreen from '/img/hero/modal/modal-dark-green.png';
+import bigDarkGreen from '/img/hero/modal/modal-dark-green@2x.png';
+import smallGreen from '/img/hero/modal/modal-green.png';
+import bigGreen from '/img/hero/modal/modal-green@2x.png';
+import smallOrange from '/img/hero/modal/modal-orange.png';
+import bigOrange from '/img/hero/modal/modal-orange@2x.png';
+import smallWarmRed from '/img/hero/modal/modal-warm-red.png';
+import bigWarmRed from '/img/hero/modal/modal-warm-red@2x.png';
+import smallRed from '/img/hero/modal-bg.png';
+import bigRed from '/img/hero/modal-bg@2x.png';
+
+const smallBGS = [
+  smallRed,
+  smallBlue,
+  smallDarkGreen,
+  smallOrange,
+  smallGreen,
+  smallWarmRed,
+];
+
+const bigBGS = [bigRed, bigBlue, bigDarkGreen, bigOrange, bigGreen, bigWarmRed];
+function setRandomBackground() {
+  const isRetina = window.devicePixelRatio > 1;
+  const bgImages = isRetina ? bigBGS : smallBGS;
+
+  const randomIndex = Math.floor(Math.random() * bgImages.length);
+  const randomImage = bgImages[randomIndex];
+
+  const mobileMenu = document.querySelector('.mobile-menu');
+  mobileMenu.style.backgroundImage = `url(${randomImage})`;
+
+  return randomIndex;
+}
+
 function updateBackground(randomIndex) {
   const section = document.getElementById('hero');
   const width = window.innerWidth;
@@ -124,52 +161,54 @@ function updateBackground(randomIndex) {
   }
 
   section.style.background = gradients[randomIndex];
-  section.style.backgroundImage = `url(${isHighResolution ? highResArray[randomIndex] : imageArray[randomIndex]})`;
+  section.style.backgroundImage = `url(${
+    isHighResolution ? highResArray[randomIndex] : imageArray[randomIndex]
+  })`;
   section.style.backgroundPosition = 'left';
   section.style.backgroundRepeat = 'no-repeat';
   section.style.backgroundSize = 'contain';
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const links = document.querySelectorAll(".hero-item-link");
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.hero-item-link');
   const section = document.getElementById('hero');
 
   let currentIndex = 0;
   let interval;
 
   function activateHover() {
-    links.forEach(link => link.classList.remove("hover"));
-    links[currentIndex].classList.add("hover");
+    links.forEach(link => link.classList.remove('hover'));
+    links[currentIndex].classList.add('hover');
 
     updateBackground(currentIndex);
     currentIndex = (currentIndex + 1) % links.length;
   }
-  updateBackground(0);
 
   function startAutoHover() {
-    interval = setInterval(activateHover, 5000);
+    interval = setInterval(() => {
+      activateHover();
+      const randomIndex = setRandomBackground();
+      updateBackground(randomIndex);
+    }, 5000);
   }
 
   function stopAutoHover() {
     clearInterval(interval);
-    links.forEach(link => link.classList.remove("hover"));
+    links.forEach(link => link.classList.remove('hover'));
   }
 
   links.forEach(link => {
-    link.addEventListener("mouseover", () => {
+    link.addEventListener('mouseover', () => {
       stopAutoHover();
-      link.classList.add("hover");
+      link.classList.add('hover');
     });
 
-    link.addEventListener("mouseout", () => {
-      link.classList.remove("hover");
+    link.addEventListener('mouseout', () => {
+      link.classList.remove('hover');
       startAutoHover();
     });
   });
 
-
-  activateHover(); 
+  activateHover();
   startAutoHover();
 });
-
-
