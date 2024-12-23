@@ -9,7 +9,6 @@ const tabletAndDesktopMenu = document.querySelector(".desktop-menu-wrapper");
 const tabletAndDesktopMenuLinks = document.querySelectorAll(".desktop-menu-link");
 const desktopMenuToggle = document.querySelector(".menu-link");
 
-// Відкриття/закриття мобільного меню
 if (mobileMenuBtn && mobileMenu && mobileMenuCloseBtn) {
   mobileMenuBtn.addEventListener("click", () => {
     mobileMenu.classList.add("is-open");
