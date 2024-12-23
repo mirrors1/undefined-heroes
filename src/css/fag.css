@@ -88,10 +88,10 @@
   .faq-list {
     display: flex;
     flex-wrap: wrap;
-    min-width: 1440px;
+    min-width: 1376px;
   }
   .faq-list li {
-    flex-basis: calc((100% - 64px) / 2);
+    width: 688px;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(250, 250, 250, 0.2);
     border-top: 1px solid rgba(250, 250, 250, 0.2);
