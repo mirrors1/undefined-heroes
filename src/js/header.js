@@ -48,3 +48,46 @@ if (tabletAndDesktopMenuLink && tabletAndDesktopMenu) {
     }
   });
 }
+
+
+
+
+
+
+import smallBlue from '/img/hero/modal/modal-blue.png';
+import bigBlue from '/img/hero/modal/modal-blue@2x.png';
+import smallDarkGreen from '/img/hero/modal/modal-dark-green.png';
+import bigDarkGreen from '/img/hero/modal/modal-dark-green@2x.png';
+import smallGreen from '/img/hero/modal/modal-green.png';
+import bigGreen from '/img/hero/modal/modal-green@2x.png';
+import smallOrange from '/img/hero/modal/modal-orange.png';
+import bigOrange from '/img/hero/modal/modal-orange@2x.png';
+import smallWarmRed from '/img/hero/modal/modal-warm-red.png';
+import bigWarmRed from '/img/hero/modal/modal-warm-red@2x.png';
+import smallRed from '/img/hero/modal-bg.png';
+import bigRed from '/img/hero/modal-bg@2x.png';
+
+
+
+const smallBGS = [
+  smallBlue,
+  smallDarkGreen,
+  smallGreen,
+  smallOrange,
+  smallWarmRed,
+  smallRed
+]
+
+const bigBGS = [
+  bigBlue,
+  bigDarkGreen,
+  bigGreen,
+  bigOrange,
+  bigWarmRed,
+  bigRed
+]
+
+
+
+
+
