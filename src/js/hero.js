@@ -130,7 +130,6 @@ function updateBackground(randomIndex) {
   section.style.backgroundSize = 'contain';
 }
 
-// Логіка роботи з посиланнями
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".hero-item-link");
   const section = document.getElementById('hero');
@@ -142,13 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
     links.forEach(link => link.classList.remove("hover"));
     links[currentIndex].classList.add("hover");
 
-    updateBackground(currentIndex); // Оновлюємо фон одночасно
+    updateBackground(currentIndex);
     currentIndex = (currentIndex + 1) % links.length;
   }
-  updateBackground(0); // Початковий фон
+  updateBackground(0);
 
   function startAutoHover() {
-    interval = setInterval(activateHover, 2000);
+    interval = setInterval(activateHover, 5000);
   }
 
   function stopAutoHover() {
@@ -167,24 +166,10 @@ document.addEventListener("DOMContentLoaded", () => {
       startAutoHover();
     });
   });
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      isSectionVisible = entry.isIntersecting;
-      if (isSectionVisible) {
-        startAutoHover();
-      } else {
-        stopAutoHover();
-      }
-    });
-  }, { threshold: 0.1 }); // 50% секції має бути видно
 
-  observer.observe(section);
 
-  // Ініціалізація
   activateHover(); 
   startAutoHover();
 });
 
 
-
-// !!
