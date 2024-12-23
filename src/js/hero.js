@@ -23,7 +23,7 @@ const tabBackgroundImages = [
   './img/hero/dark-green/tab-dark-green.png',
   './img/hero/orange/tab-orange.png',
   './img/hero/green/tab-green.png',
-  ',/img/hero/warm-red/tab-warm-red.png'
+  './img/hero/warm-red/tab-warm-red.png'
 ];
 const desktopBackgroundImages = [
   './img/hero/red/bg.png',
@@ -56,7 +56,7 @@ const highResDesktopImages = [
   './img/hero/blue/blue@2x.png',
   './img/hero/dark-green/dark-green@2x.png',
   './img/hero/orange/orange@2x.png',
-  './img/hero/green/bg-green@2x.png;',
+  './img/hero/green/bg-green@2x.png',
   './img/hero/warm-red/warm-red@2x.png'
 ];
 
@@ -79,8 +79,12 @@ function updateBackground(randomIndex) {
     highResArray = highResDesktopImages;
   }
 
-  section.style.background = gradients[randomIndex];
+  // section.style.background = gradients[randomIndex];
   section.style.backgroundImage = `url(${isHighResolution ? highResArray[randomIndex] : imageArray[randomIndex]})`;
+  // section.style.background = `${gradients[randomIndex]}, url(${isHighResolution ? highResArray[randomIndex] : imageArray[randomIndex]})`;
+
+  // console.log('Current image:', isHighResolution ? highResArray[randomIndex] : imageArray[randomIndex]);
+
   section.style.backgroundPosition = 'left';
   section.style.backgroundRepeat = 'no-repeat';
   section.style.backgroundSize = 'contain';
@@ -101,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateBackground(currentIndex); // Оновлюємо фон одночасно
     currentIndex = (currentIndex + 1) % links.length;
   }
+  updateBackground(0); // Початковий фон
 
   function startAutoHover() {
     interval = setInterval(activateHover, 2000);
