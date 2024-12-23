@@ -17,9 +17,9 @@
         margin-bottom: 63px;
     }
 
-.container {
+/* .container {
     padding: 32px 16px;
-}
+} */
 
 .footer-common-text {
 display: flex;
@@ -185,10 +185,10 @@ transition: background-color 0.3s ease;
             background-image: url('/img/footer/tab-bg@2x.png');
           }
         }
-
+/* 
     .container{
         padding: 80px 32px 169px 32px;
-    }
+    } */
 
     .footer-common {
         margin-bottom: 18px;
@@ -245,9 +245,9 @@ transition: background-color 0.3s ease;
 
   @media screen and (min-width:1440px){
 
-    .container {
+    /* .container {
         padding-left: 196px;
-    }
+    } */
 
     .footer {
         background-image: url('/img/footer/bg.png'); 
