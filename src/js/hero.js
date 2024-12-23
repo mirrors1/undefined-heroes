@@ -10,54 +10,54 @@ const gradients = [
 
 // Зображення для різних пристроїв
 const mobileBackgroundImages = [
-  '/img/hero/red/mb-bg.png',
-  '/img/hero/blue/mb-blue.png',
-  '/img/hero/dark-green/mb-dark-green.png',
-  '/img/hero/orange/mb-orange.png',
-  '/img/hero/green/mb-green.png',
-  '/img/hero/warm-red/mb-warm-red.png',
+  './img/hero/red/mb-bg.png',
+  './img/hero/blue/mb-blue.png',
+  './img/hero/dark-green/mb-dark-green.png',
+  './img/hero/orange/mb-orange.png',
+  './img/hero/green/mb-green.png',
+  './img/hero/warm-red/mb-warm-red.png',
 ];
 const tabBackgroundImages = [
-  '/img/hero/red/tab-bg.png',
-  '/img/hero/blue/tab-blue.png',
-  '/img/hero/dark-green/tab-dark-green.png',
-  '/img/hero/orange/tab-orange.png',
-  '/img/hero/green/tab-green.png',
-  '/img/hero/warm-red/tab-warm-red.png',
+  './img/hero/red/tab-bg.png',
+  './img/hero/blue/tab-blue.png',
+  './img/hero/dark-green/tab-dark-green.png',
+  './img/hero/orange/tab-orange.png',
+  './img/hero/green/tab-green.png',
+  ',/img/hero/warm-red/tab-warm-red.png',
 ];
 const desktopBackgroundImages = [
-  '/img/hero/red/bg.png',
-  '/img/hero/blue/blue.png',
-  '/img/hero/dark-green/dark-green.png',
-  '/img/hero/orange/orange.png',
-  '/img/hero/orange/bg.png',
-  '/img/hero/warm-red/warm-red.png',
+  './img/hero/red/bg.png',
+  './img/hero/blue/blue.png',
+  './img/hero/dark-green/dark-green.png',
+  './img/hero/orange/orange.png',
+  './img/hero/orange/bg.png',
+  './img/hero/warm-red/warm-red.png',
 ];
 
 // Масив для високої роздільності
 const highResMobileImages = [
-  '/img/hero/red/mb-bg@2x.png',
-  '/img/hero/blue/mb-blue@2x.png',
-  '/img/hero/dark-green/mb-dark-green@2x.png',
-  '/img/hero/orange/mb-orange@2x.png',
-  '/img/hero/green/mb-green@2x.png',
-  '/img/hero/warm-red/mb-warm-red@2x.png',
+  './img/hero/red/mb-bg@2x.png',
+  './img/hero/blue/mb-blue@2x.png',
+  './img/hero/dark-green/mb-dark-green@2x.png',
+  './img/hero/orange/mb-orange@2x.png',
+  './img/hero/green/mb-green@2x.png',
+  './img/hero/warm-red/mb-warm-red@2x.png',
 ];
 const highResTabImages = [
-  '/img/hero/red/tab-bg@2x.png',
-  '/img/hero/blue/tab-blue@2x.png',
-  '/img/hero/dark-green/tab-dark-green@2x.png',
-  '/img/hero/orange/tab-orange@2x.png',
-  '/img/hero/green/tab-green@2x.png',
-  '/img/hero/warm-red/tab-warm-red@2x.png',
+  './img/hero/red/tab-bg@2x.png',
+  './img/hero/blue/tab-blue@2x.png',
+  './img/hero/dark-green/tab-dark-green@2x.png',
+  './img/hero/orange/tab-orange@2x.png',
+  './img/hero/green/tab-green@2x.png',
+  './img/hero/warm-red/tab-warm-red@2x.png',
 ];
 const highResDesktopImages = [
-  '/img/hero/red/bg@2x.png',
-  '/img/hero/blue/blue@2x.png',
-  '/img/hero/dark-green/dark-green@2x.png',
-  '/img/hero/orange/orange@2x.png',
-  '/img/hero/green/bg-green@2x.png;',
-  '/img/hero/warm-red/warm-red@2x.png',
+  './img/hero/red/bg@2x.png',
+  './img/hero/blue/blue@2x.png',
+  './img/hero/dark-green/dark-green@2x.png',
+  './img/hero/orange/orange@2x.png',
+  './img/hero/green/bg-green@2x.png;',
+  './img/hero/warm-red/warm-red@2x.png',
 ];
 
 // Синхронізовані функції для фону
