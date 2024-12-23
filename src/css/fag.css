@@ -46,6 +46,7 @@
   max-height: 0;
   transition: opasity 5000ms ease, visibility 500ms ease, max-height 500ms ease;
 }
+
 #faq-accordion .accordion-body.visible {
   max-height: 500px;
   visibility: visible;
@@ -63,7 +64,9 @@
 .faq-list .ac .ac-trigger::after {
   content: none;
 }
-
+.faq-icon {
+  stroke: #fafafa;
+}
 @media screen and (min-width: 768px) {
   .faq-container {
     margin-bottom: 96px;
