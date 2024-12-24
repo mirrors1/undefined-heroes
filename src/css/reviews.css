@@ -1,0 +1,107 @@
+.reviews-container {
+  margin-bottom: 64px;
+  color: rgba(250, 250, 250, 0.4);
+}
+.reviews-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.4);
+  margin-bottom: 32px;
+}
+.reviews-item {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 20px;
+  padding: 32px 24px;
+  width: 332px;
+  height: 302px;
+}
+.reviews-item-img {
+  border-radius: 10px;
+  margin-bottom: 32px;
+}
+.reviews-item-card {
+  width: 295px;
+  height: 158px;
+  overflow: hidden;
+}
+.reviews-item-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  margin-bottom: 8px;
+}
+.reviews-item-content {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+}
+.reviews-icon-left,
+.reviews-icon-right {
+  stroke: #3b3b3b;
+  fill: var(--background);
+}
+.reviews-icon-active {
+  stroke: #fafafa;
+}
+.reviews-swiper-navigation-buttons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.reviews-swiper-button-left,
+.reviews-swiper-button-right {
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  padding: 14px;
+  width: 52px;
+  height: 52px;
+}
+.reviews-button-active {
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+.reviews-icon-right,
+.reviews-icon-left {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviews-container {
+    margin-bottom: 96px;
+  }
+  .reviews-swiper-navigation-buttons {
+    gap: 20px;
+  }
+  .reviews-swiper-button-left,
+  .reviews-swiper-button-right {
+    padding: 18px;
+    width: 68px;
+    height: 68px;
+  }
+  .reviews-icon-right,
+  .reviews-icon-left {
+    width: 32px;
+    height: 32px;
+  }
+  .reviews-item-card {
+    width: 296px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .reviews-container {
+    margin-bottom: 164px;
+    color: rgba(250, 250, 250, 0.4);
+  }
+  .reviews-item-card {
+    width: 284px;
+  }
+}
