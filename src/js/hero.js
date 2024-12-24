@@ -129,6 +129,91 @@ const smallBGS = [
 ];
 
 const bigBGS = [bigRed, bigBlue, bigDarkGreen, bigOrange, bigGreen, bigWarmRed];
+
+// function setRandomBackground() {
+//   const isRetina = window.devicePixelRatio > 1;
+//   const bgImages = isRetina ? bigBGS : smallBGS;
+
+//   const randomIndex = Math.floor(Math.random() * bgImages.length);
+//   const randomImage = bgImages[randomIndex];
+
+//   const mobileMenu = document.querySelector('.mobile-menu');
+//   mobileMenu.style.backgroundImage = `url(${randomImage})`;
+
+//   return randomIndex;
+// }
+
+// function updateBackground(randomIndex) {
+//   const section = document.getElementById('hero');
+//   const width = window.innerWidth;
+//   const isHighResolution = window.devicePixelRatio >= 2;
+
+//   let imageArray, highResArray;
+
+//   if (width < 768) {
+//     imageArray = mobileBackgroundImages;
+//     highResArray = highResMobileImages;
+//   } else if (width < 1440) {
+//     imageArray = tabBackgroundImages;
+//     highResArray = highResTabImages;
+//   } else {
+//     imageArray = desktopBackgroundImages;
+//     highResArray = highResDesktopImages;
+//   }
+
+//   section.style.background = gradients[randomIndex];
+//   section.style.backgroundImage = `url(${
+//     isHighResolution ? highResArray[randomIndex] : imageArray[randomIndex]
+//   })`;
+//   section.style.backgroundPosition = 'left';
+//   section.style.backgroundRepeat = 'no-repeat';
+//   section.style.backgroundSize = 'contain';
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const links = document.querySelectorAll('.hero-item-link');
+//   const section = document.getElementById('hero');
+
+//   let currentIndex = 0;
+//   let interval;
+
+//   function activateHover() {
+//     links.forEach(link => link.classList.remove('hover'));
+//     links[currentIndex].classList.add('hover');
+
+//     updateBackground(currentIndex);
+//     currentIndex = (currentIndex + 1) % links.length;
+//   }
+
+//   function startAutoHover() {
+//     interval = setInterval(() => {
+//       activateHover();
+//       const randomIndex = setRandomBackground();
+//       updateBackground(randomIndex);
+//     }, 5000);
+//   }
+
+//   function stopAutoHover() {
+//     clearInterval(interval);
+//     links.forEach(link => link.classList.remove('hover'));
+//   }
+
+//   links.forEach(link => {
+//     link.addEventListener('mouseover', () => {
+//       stopAutoHover();
+//       link.classList.add('hover');
+//     });
+
+//     link.addEventListener('mouseout', () => {
+//       link.classList.remove('hover');
+//       startAutoHover();
+//     });
+//   });
+
+//   activateHover();
+//   startAutoHover();
+// });
+
 function setRandomBackground() {
   const isRetina = window.devicePixelRatio > 1;
   const bgImages = isRetina ? bigBGS : smallBGS;
@@ -175,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
   let interval;
+  let isSectionVisible = true;
 
   function activateHover() {
     links.forEach(link => link.classList.remove('hover'));
@@ -185,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startAutoHover() {
+    if (!isSectionVisible) return;
     interval = setInterval(() => {
       activateHover();
       const randomIndex = setRandomBackground();
@@ -211,4 +298,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   activateHover();
   startAutoHover();
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        isSectionVisible =
+          entry.isIntersecting && entry.intersectionRatio >= 0.25;
+        if (isSectionVisible) {
+          startAutoHover();
+        } else {
+          stopAutoHover();
+        }
+      });
+    },
+    {
+      threshold: 0.25,
+    }
+  );
+
+  if (window.document.getElementById('hero')) {
+    observer.observe(section);
+  }
 });

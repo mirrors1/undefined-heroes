@@ -143,13 +143,5 @@
 .header-item-link:focus {
   color: var(--red);
   border-color: var(--red);
-  box-shadow: 0 0 20px var(--red);
+  box-shadow: 0 0 15px var(--red);
 }
-
-/*.header-item-link.hover,
-.header-item-link:active,
-.header-item-link:focus {
-  color: var(--red);
-  border-color: var(--red);
-  box-shadow: 0 0 20px var(--red);
-} */

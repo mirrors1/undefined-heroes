@@ -1,394 +1,386 @@
 @media screen and (min-width: 320px) and (max-width: 375px) {
-    .section.projects-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-    }
+  .section.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
 
-    .li-cards {
-        margin: 0 auto;
-    }
+  .li-cards {
+    margin: 0 auto;
+  }
 }
-
-
-
 
 /* #region-mobile */
 
-
 .section {
-    margin-top: 0;
-    margin-bottom: 64px;
+  margin-top: 0;
+  margin-bottom: 64px;
 }
 
-
 .title-projects {
-    font-family: "Inter Tight", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: rgba(250, 250, 250, 0.4);
-    margin-bottom: 32px;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  margin-bottom: 32px;
 }
 
 .ul-cards-list {
-    display: flex;
-    overflow: hidden;
-    position: relative;
+  display: flex;
+  overflow: hidden;
+  position: relative;
 }
 
 /* #region animation cards */
 
 @keyframes slideInFromRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideOutToLeft {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-    to {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 }
 
 @keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideOutToRight {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
 .slide-in-right {
-    animation: slideInFromRight 0.6s ease-out;
+  animation: slideInFromRight 0.6s ease-out;
 }
 
 .slide-out-left {
-    animation: slideOutToLeft 0.6s ease-out;
+  animation: slideOutToLeft 0.6s ease-out;
 }
 
 .slide-in-left {
-    animation: slideInFromLeft 0.6s ease-out;
+  animation: slideInFromLeft 0.6s ease-out;
 }
 
 .slide-out-right {
-    animation: slideOutToRight 0.6s ease-out;
+  animation: slideOutToRight 0.6s ease-out;
 }
 
 /* #engregion animation cards */
 
 .li-cards {
-    display: flex;
-    flex-wrap: wrap;
-    background: #fafafa;
-    border-radius: 24px;
-    width: 343px;
-    height: 812px;
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-    min-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fafafa;
+  border-radius: 24px;
+  /* width: 343px; */
+  height: 812px;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  min-width: 320px;
 }
 
 .first-block {
-    padding: 32px;
+  padding: 32px;
 }
 
 .ul-tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .li-tech-list {
-    border: 1px solid rgba(28, 29, 32, 0.2);
-    border-radius: 60px;
-    padding: 13px 18px;
-    width: max-content;
-    height: 45px;
-    box-shadow: none;
-    /* Убираем плавный переход */
+  border: 1px solid rgba(28, 29, 32, 0.2);
+  border-radius: 60px;
+  padding: 13px 18px;
+  width: max-content;
+  height: 45px;
+  box-shadow: none;
+  /* Убираем плавный переход */
 }
 
 .li-tech-list.active {
-    color: var(--red);
-    /* Мгновенно подсвечиваем текст в li */
-    border-color: var(--red);
-    box-shadow: 0 0 20px var(--red);
+  color: var(--red);
+  /* Мгновенно подсвечиваем текст в li */
+  border-color: var(--red);
+  box-shadow: 0 0 20px var(--red);
 }
 
 .li-tech-list.active .p-tech {
-    color: var(--red);
-    /* Мгновенно подсвечиваем текст внутри p */
+  color: var(--red);
+  /* Мгновенно подсвечиваем текст внутри p */
 }
 
 .p-tech {
-    font-family: "Inter Tight", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: -0.02em;
-    color: #1c1d20;
-    /* Изначальный цвет текста */
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #1c1d20;
+  /* Изначальный цвет текста */
 }
 
 .h-two-title-projects {
-    font-family: "Inter Tight", sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 117%;
-    letter-spacing: -0.03em;
-    color: #1c1d20;
-    margin-top: 96px;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: #1c1d20;
+  margin-top: 96px;
 }
 
 .btn-projects {
-    border-radius: 60px;
-    padding: 13px 32px;
-    width: max-content;
-    height: 45px;
-    background: #ed3b44;
-    margin-top: 32px;
-    font-family: "Inter Tight", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: -0.02em;
-    color: #fafafa;
-    transition: transform 200ms ease, box-shadow 200ms ease;
-    /* Плавный переход для увеличения и тени */
+  border-radius: 60px;
+  padding: 13px 32px;
+  width: max-content;
+  height: 45px;
+  background: #ed3b44;
+  margin-top: 32px;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  color: #fafafa;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  /* Плавный переход для увеличения и тени */
 }
 
 .btn-projects:hover {
-    background: #e0373f;
-    transform: scale(1.02);
-    /* Увеличение кнопки при наведении */
-    box-shadow: 0 4px 12px rgba(200, 30, 40, 0.6), 0 0 25px rgba(200, 30, 40, 0.4);
-    /* Тень по всему контуру, темнее кнопки */
+  background: #e0373f;
+  transform: scale(1.02);
+  /* Увеличение кнопки при наведении */
+  box-shadow: 0 4px 12px rgba(200, 30, 40, 0.6), 0 0 25px rgba(200, 30, 40, 0.4);
+  /* Тень по всему контуру, темнее кнопки */
 }
 
 .btn-projects:focus {
-    background: #e0373f;
-    transform: scale(1.02);
-    /* Увеличение кнопки при фокусе */
-    box-shadow: 0 4px 12px rgba(200, 30, 40, 0.6), 0 0 25px rgba(200, 30, 40, 0.4);
-    /* Тень по всему контуру, темнее кнопки */
+  background: #e0373f;
+  transform: scale(1.02);
+  /* Увеличение кнопки при фокусе */
+  box-shadow: 0 4px 12px rgba(200, 30, 40, 0.6), 0 0 25px rgba(200, 30, 40, 0.4);
+  /* Тень по всему контуру, темнее кнопки */
 }
 
 .second-block {
-    border-radius: 0 0 24px 24px;
-    width: 343px;
-    height: 395px;
-    background: #242527;
+  border-radius: 0 0 24px 24px;
+  width: 100%;
+  height: 395px;
+  background: #242527;
+  margin: 0 auto;
 }
 
 .img-projects {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-left: 16px;
-    margin-right: 16px;
+  /* margin-top: 100px;
+  margin-bottom: 100px; */
+  /* margin-left: 16px; */
+  /* margin-right: 16px; */
+  margin: 100px auto 0;
 }
 
 .block-btn-scroll {
-    margin-top: 32px;
-    margin-left: 113.5px;
-    margin-right: 0;
-    display: flex;
-    gap: 12px;
+  margin-top: 32px;
+  margin-left: 113.5px;
+  margin-right: 0;
+  display: flex;
+  gap: 12px;
 }
 
 .btn-scroll {
-    border: 1px solid rgba(250, 250, 250, 0.5);
-    border-radius: 60px;
-    padding: 14px;
-    width: 52px;
-    height: 52px;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-        /* Плавный переход для кнопки */
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 60px;
+  padding: 14px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  /* Плавный переход для кнопки */
 }
 
 .svg-icon-scrool {
-    width: 24px;
-    height: 24px;
-    stroke-width: 2px;
-    fill: transparent;
-    stroke: #fafafa;
-    transition: stroke 0.3s ease;
-    /* Плавный переход для изменения цвета стрелки */
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
+  fill: transparent;
+  stroke: #fafafa;
+  transition: stroke 0.3s ease;
+  /* Плавный переход для изменения цвета стрелки */
 }
 
 /* Эффект увеличения для активной кнопки */
 .btn-scroll.active:hover {
-    box-shadow: 0 4px 12px rgba(200, 30, 40, 0.6), 0 0 25px rgba(200, 30, 40, 0.4);
-    /* Тень в цвет активной кнопки */
-    transform: scale(1.02);
-    /* Увеличение кнопки на 1.02 */
+  box-shadow: 0 4px 12px rgba(200, 30, 40, 0.6), 0 0 25px rgba(200, 30, 40, 0.4);
+  /* Тень в цвет активной кнопки */
+  transform: scale(1.02);
+  /* Увеличение кнопки на 1.02 */
 }
 
 /* Эффект увеличения для иконки стрелки */
 .btn-scroll.active:hover .svg-icon-scrool {
-    transform: scale(1.02);
-    /* Увеличение стрелки на 1.02 */
-    transition: transform 0.3s ease;
-    /* Плавный переход для иконки */
+  transform: scale(1.02);
+  /* Увеличение стрелки на 1.02 */
+  transition: transform 0.3s ease;
+  /* Плавный переход для иконки */
 }
 
 /* Дополнительный стиль для неактивной кнопки */
 .btn-scroll:disabled {
-    border: 1px solid rgba(250, 250, 250, 0.2);
+  border: 1px solid rgba(250, 250, 250, 0.2);
 }
 
 /* Неактивный цвет для стрелки правой кнопки */
 .btn-next:disabled .svg-icon-scrool {
-    stroke: #3b3b3b;
-    /* Меняем цвет стрелки на серый для неактивной кнопки */
+  stroke: #3b3b3b;
+  /* Меняем цвет стрелки на серый для неактивной кнопки */
 }
-
-
-
 
 /* #endregion-mobile */
 
 /* #region tab */
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
+  .section {
+    margin-top: 0;
+    margin-bottom: 96px;
+  }
 
-    .section{
-        margin-top: 0;
-        margin-bottom: 96px;
-    }
+  .li-cards {
+    width: 704px;
+    height: 1191px;
+  }
 
-    .li-cards {
-        width: 704px;
-        height: 1191px;
-    }
+  .first-block {
+    padding: 64px 146px 64px 64px;
+  }
 
-    .first-block {
-        padding: 64px 146px 64px 64px;
-    }
+  .li-tech-list {
+    border: 1px solid rgba(28, 29, 32, 0.2);
+    border-radius: 60px;
+    padding: 18px;
+    width: max-content;
+    height: 55px;
+  }
 
-    .li-tech-list {
-        border: 1px solid rgba(28, 29, 32, 0.2);
-        border-radius: 60px;
-        padding: 18px;
-        width: max-content;
-        height: 55px;
-    }
+  .h-two-title-projects {
+    font-size: 44px;
+    line-height: 100%;
+    margin-top: 158px;
+  }
 
-    .h-two-title-projects {
-        font-size: 44px;
-        line-height: 100%;
-        margin-top: 158px;
-    }
+  .btn-projects {
+    padding: 18px 50px;
+    width: max-content;
+    height: 55px;
+    margin-top: 38px;
+  }
 
-    .btn-projects {
-        padding: 18px 50px;
-        width: max-content;
-        height: 55px;
-        margin-top: 38px;
-    }
+  .second-block {
+    width: 704px;
+    height: 625px;
+  }
 
-    .second-block {
-        width: 704px;
-        height: 625px;
-    }
+  .img-projects {
+    margin: 120px 45px 120px 45px;
+  }
 
-    .img-projects {
-        margin: 120px 45px 120px 45px;
-    }
+  .block-btn-scroll {
+    margin-top: 64px;
+    margin-left: 274px;
+    gap: 20px;
+  }
 
-    .block-btn-scroll {
-        margin-top: 64px;
-        margin-left: 274px;
-        gap: 20px;
-    }
+  .btn-scroll {
+    padding: 18px;
+    width: 68px;
+    height: 68px;
+  }
 
-    .btn-scroll {
-        padding: 18px;
-        width: 68px;
-        height: 68px;
-    }
-
-    .svg-icon-scrool {
-        width: 32px;
-        height: 32px;
-    }
+  .svg-icon-scrool {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* #endregion tab */
 
 /* #region desktop */
-@media screen and (min-width:1440px) {
+@media screen and (min-width: 1440px) {
+  .section {
+    margin-top: 0;
+    margin-bottom: 164px;
+  }
 
-    .section {
-            margin-top: 0;
-            margin-bottom: 164px;
-        }
+  .li-cards {
+    width: 1376px;
+    height: 625px;
+  }
 
-    .li-cards {
-        width: 1376px;
-        height: 625px;
-    }
+  .first-block {
+    width: 688px;
+    padding: 64px 130px 64px 64px;
+  }
 
-    .first-block {
-        width: 688px;
-        padding: 64px 130px 64px 64px;
-    }
+  .h-two-title-projects {
+    margin-top: 223px;
+  }
 
-    .h-two-title-projects {
-        margin-top: 223px;
-    }
+  .btn-projects {
+    margin-top: 32px;
+  }
 
-    .btn-projects {
-        margin-top: 32px;
-    }
+  .second-block {
+    border-radius: 0 24px 24px 0;
+    width: 688px;
+    height: 625px;
+  }
 
-    .second-block {
-        border-radius: 0 24px 24px 0;
-        width: 688px;
-        height: 625px;
-    }
+  .img-projects {
+    margin-left: 37px;
+    margin-right: 37px;
+  }
 
-    .img-projects {
-        margin-left: 37px;
-        margin-right: 37px;
-    }
-
-    .block-btn-scroll {
-        margin-left: 610px;
-        margin-right: 0;
-    }
+  .block-btn-scroll {
+    margin-left: 610px;
+    margin-right: 0;
+  }
 }
 
 /* #endregion desktop */
