@@ -143,3 +143,35 @@
     margin-bottom: 26px;
   }
 }
+
+/*!! animation */
+/* 
+.accordion-header .question:hover {
+  color: var(--red);
+}
+.accordion-header .btn-arrow-down:hover {
+  border-color: var(--red);
+  box-shadow: 0 0 15px var(--red);
+} */
+
+.accordion-header.ac:hover .btn-arrow-down,
+.accordion-header.ac:hover .question {
+  color: var(--red); /* Змінити колір тексту на потрібний */
+  background-color: transparent; /* Змінити фон для кнопки */
+  outline-color: 0 0 15px var(--red);
+}
+
+.accordion-header.ac:hover .btn-arrow-down,
+.accordion-header.ac:hover .question {
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* .accordion-header.ac:hover .btn-arrow-down svg {
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+.accordion-header.ac:hover .btn-arrow-down svg {
+  stroke: var(--red);
+}
