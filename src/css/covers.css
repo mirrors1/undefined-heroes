@@ -51,6 +51,9 @@
   animation-iteration-count: infinite;
   animation: animateX50Y10 10000ms infinite 1000ms;
 }
+.container-covers-list-item {
+flex-shrink: 0;
+}
 
 .portfolio-list-img:hover {
   transition-property: transform;
