@@ -1,4 +1,5 @@
 .covers {
+  overflow: hidden;
   display: flex;
   width: 100%;
 
@@ -8,7 +9,7 @@
       rgba(217, 217, 217, 0.04),
       rgba(217, 217, 217, 0.04)
     ),
-    url(../img/covers/mobile/Rectangle-13.png);
+    url(./img/covers/mobile/Rectangle-13.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,7 +24,7 @@
         rgba(217, 217, 217, 0.04),
         rgba(217, 217, 217, 0.04)
       ),
-      url(../img/covers/mobile/mobile-2x/Rectangle-13-mobile-2x.png);
+      url(./img/covers/mobile/mobile-2x/Rectangle-13-mobile-2x.png);
   }
 }
 
@@ -33,14 +34,45 @@
   gap: 20px;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
+
+  right: -800px;
+  left: 0;
+  transform: rotate(16deg);
 }
 .container-covers-list {
   width: 375px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 10px;
-  transform: rotate(16deg);
+  animation-name: marqueeLine;
+  /* animation-duration: 5s; */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation: animateX50Y10 8000ms infinite 1000ms;
+}
+@keyframes marqueeLine {
+  from {
+    transform: translateY(-20%);
+    /* transform: rotate(16deg); */
+  }
+
+  to {
+    transform: translateX(-90%);
+  }
+}
+
+@keyframes animateX50Y10 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-400px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -52,7 +84,7 @@
         rgba(217, 217, 217, 0.04),
         rgba(217, 217, 217, 0.04)
       ),
-      url(../img/covers/laptop/Rectangle-13-laptop.png);
+      url(./img/covers/laptop/Rectangle-13-laptop.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -70,7 +102,7 @@
           rgba(217, 217, 217, 0.04),
           rgba(217, 217, 217, 0.04)
         ),
-        url(../img/covers/laptop/laptop-2x/Rectangle-13-laptop-2x.png);
+        url(./img/covers/laptop/laptop-2x/Rectangle-13-laptop-2x.png);
     }
   }
 }
@@ -84,7 +116,7 @@
         rgba(217, 217, 217, 0.04),
         rgba(217, 217, 217, 0.04)
       ),
-      url(../img/covers/Rectangle-13-comp.png);
+      url(./img/covers/Rectangle-13-comp.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,7 +134,7 @@
           rgba(217, 217, 217, 0.04),
           rgba(217, 217, 217, 0.04)
         ),
-        url(../img/covers/Rectangle-13-comp-2x.png);
+        url(./img/covers/Rectangle-13-comp-2x.png);
     }
   }
 }
