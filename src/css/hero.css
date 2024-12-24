@@ -38,6 +38,7 @@
   display: flex;
   gap: 4px;
 }
+
 .hero-list-item {
 }
 
@@ -58,6 +59,23 @@
 .hero-item-email {
   border-radius: 60px;
   width: 178px;
+}
+
+@media screen and (max-width: 375px) {
+  .hero {
+    padding: 252px 0 28px 0;
+  }
+  .hero-list {
+    max-width: 320px;
+    gap: 0px;
+  }
+  .hero-item-link {
+    width: 34px;
+    height: 34px;
+  }
+  .hero-item-email {
+    width: 178px;
+  }
 }
 
 @media screen and (min-width: 768px) {

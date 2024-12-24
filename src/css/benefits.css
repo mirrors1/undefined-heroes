@@ -1,120 +1,134 @@
 .benefits {
-    margin-top: 64px;
-    margin-bottom: 64px;
+  margin-top: 64px;
+  margin-bottom: 64px;
 }
 
 .benefits__title {
-    font-family: sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: var(--gray);
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--gray);
 
-    margin-bottom: 32px;
+  margin-bottom: 32px;
 }
 
 .benefits__list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 32px;
-    width: 344px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  width: 344px;
 }
 
 .benefits__list-item {
-    width: 344px;
-    border-radius: 20px;
-    padding: 24px;
-    background: #242527;
+  width: 344px;
+  border-radius: 20px;
+  padding: 24px;
+  background: #242527;
 }
 
 .benefits__icon-wrap {
-    width: 48px;
-    height: 48px;
-    padding: 12px;
-    margin-bottom: 64px;
-    border-radius: 10px;
-    background-color: var(--red);
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  margin-bottom: 64px;
+  border-radius: 10px;
+  background-color: var(--red);
 }
 
 .benefits__icon {
-    background: var(--red);
-    stroke: #fff;
-    fill: var(--red);
+  background: var(--red);
+  stroke: #fff;
+  fill: var(--red);
 }
 
 .benefits__card-title {
-    font-family: sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 1.5;
-    letter-spacing: -0.02em;
-    color: #FAFAFA;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: #fafafa;
 }
 
 .benefits__card-text {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: -0.02em;
-    color: var(--gray);
-    margin-top: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--gray);
+  margin-top: 8px;
 }
 
 .benefits__btn {
-    display: inline-block;
-    padding: 18px 36px;
-    border-radius: 60px;
-    border: 1px solid rgba(250, 250, 250, .2);
-    color: #fafafa;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: -.02em;
-    line-height: 1.09;
-    width: auto;
-    margin-right: auto;
-    transition: background-color .25s cubic-bezier(.4,0,.2,1);
+  display: inline-block;
+  padding: 18px 36px;
+  border-radius: 60px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.09;
+  width: auto;
+  margin-right: auto;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .benefits__btn:hover {
-    background-color: var(--red);
+  background-color: var(--red);
+}
+
+@media screen and (max-width: 375px) {
+  .benefits__container {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .benefits__list {
+    width: 320px;
+  }
+  .benefits__list-item {
+    max-width: 320px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .benefits {
-        margin-top: 96px;
-        margin-bottom: 96px;
-    }
+  .benefits {
+    margin-top: 96px;
+    margin-bottom: 96px;
+  }
 
-    .benefits__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        width: 100%;
-        margin-bottom: 64px;
-    }
+  .benefits__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 64px;
+  }
 
-    .benefits__list-item {
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .benefits__list-item {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .benefits .container {
-        display: flex;
-        justify-content: space-between;
-    }
+  .benefits .container {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .benefits-wrap {
-        display: flex;
-        flex-direction: column;
-        width: 680px;
-    }
+  .benefits-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 680px;
+  }
 
-    .benefits__list {
-        gap: 16px;
-    }
+  .benefits__list {
+    gap: 16px;
+  }
 }
