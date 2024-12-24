@@ -10,10 +10,9 @@ const succes = document.querySelector('.succes');
 const invalid = document.querySelector('.invalid');
 import pathErrorIcon from '../img/icons.svg#icon-close';
 
-//!! тут помилка була в імпорті Велика літера T
-// import iziToast from 'iziToast';
 import iziToast from 'izitoast';
-import 'iziToast/dist/css/iziToast.css';
+
+import 'izitoast/dist/css/iziToast.min.css';
 
 // entering data into input
 
