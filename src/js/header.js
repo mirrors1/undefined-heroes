@@ -1,5 +1,6 @@
 
 
+
 const mobileMenuBtn = document.querySelector(".menu-button");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileMenuCloseBtn = document.querySelector(".mobile-close-btn");
@@ -10,35 +11,34 @@ const tabletAndDesktopMenuLinks = document.querySelectorAll(".desktop-menu-link"
 const desktopMenuToggle = document.querySelector(".menu-link");
 
 if (mobileMenuBtn && mobileMenu && mobileMenuCloseBtn) {
-  mobileMenuBtn.addEventListener("click", () => {
-    mobileMenu.classList.add("is-open");
-    document.body.style.overflow = "hidden";
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
   });
 
-  mobileMenuCloseBtn.addEventListener("click", () => {
-    mobileMenu.classList.remove("is-open");
-    document.body.style.overflow = "auto";
+  mobileMenuCloseBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('is-open');
+    document.body.style.overflow = 'auto';
   });
 }
 
 
 if (mobileNavigation.length > 0) {
-  mobileNavigation.forEach((item) => {
-    item.addEventListener("click", () => {
-      mobileMenu.classList.remove("is-open");
-      document.body.style.overflow = "auto";
+  mobileNavigation.forEach(item => {
+    item.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      document.body.style.overflow = 'auto';
     });
   });
 }
 
 
 if (mobileOrderBtn) {
-  mobileOrderBtn.addEventListener("click", () => {
-    mobileMenu.classList.remove("is-open");
-    document.body.style.overflow = "auto";
+  mobileOrderBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('is-open');
+    document.body.style.overflow = 'auto';
   });
 }
-
 
 if (desktopMenuToggle && tabletAndDesktopMenu) {
   desktopMenuToggle.addEventListener("click", (event) => {
@@ -66,3 +66,4 @@ document.addEventListener("click", (event) => {
     tabletAndDesktopMenu.classList.remove("is-open");
   }
 });
+
