@@ -8,7 +8,7 @@ const modal = document.querySelector('.backdrop');
 const closeButton = document.querySelector('.modal-close-btn');
 const succes = document.querySelector('.succes');
 const invalid = document.querySelector('.invalid');
-import pathErrorIcon from '../img/icons.svg#icon-close';
+import pathErrorIcon from '../img/icons.svg#error';
 
 import iziToast from 'izitoast';
 
@@ -54,15 +54,18 @@ window.onkeydown = function (event) {
 
 const emailInput = document.getElementById('email');
 
+
 emailInput.addEventListener('blur', function () {
   const pattern = new RegExp(inputEmail.getAttribute('pattern'));
   const value = inputEmail.value;
+
 
   if (pattern.test(value)) {
     console.log('Sucсes');
     inputEmail.style.borderBottom = '1px solid #3cbc81';
     succes.classList.remove('succes-is-hidden');
     invalid.classList.add('invalid-is-hidden');
+
   } else {
     console.log('Invalid');
     succes.classList.add('succes-is-hidden');
@@ -71,11 +74,12 @@ emailInput.addEventListener('blur', function () {
   }
 });
 
+
 // izitoast
 
 function showErrorToast(message) {
   iziToast.show({
-    title: 'Error',
+    title: 'Attention!',
     titleColor: 'black',
     titleSize: '16px',
     titleLineHeight: '150%',
@@ -83,9 +87,11 @@ function showErrorToast(message) {
     messageColor: 'black',
     messageSize: '16px',
     messageLineHeight: '150%',
-    backgroundColor: '#ef4040',
+    backgroundColor: 'white',
     theme: 'light',
     color: 'black',
+    iconColor:'white',
+    iconUrl: pathErrorIcon,
     position: 'center',
     timeout: 100000,
   });
@@ -96,35 +102,35 @@ function showErrorToast(message) {
 form.addEventListener('submit', handlerSubmit);
 
 function handlerSubmit(event) {
-  event.preventDefault();
-  const { email, comments } = event.target.elements;
-
-  if (!comments.value.trim()) {
-    showErrorToast('Сomment cannot be empty');
-    return;
+    event.preventDefault();
+    const { email, comments } = event.target.elements;
+  
+    if (!email.value.trim()) {
+      showErrorToast('Сomment cannot be empty');
+      return;
+    }
+  
+    fetch(`${BASE_URL}/requests`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: email.value }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        modal.classList.add('is-open');
+        modalTitle.innerHTML = data.title;
+        modalMessage.innerHTML = data.message;
+      })
+  
+      .catch(error => {
+        const errorMessage = error.message;
+        showErrorToast(errorMessage);
+      });
   }
-
-  fetch(`${BASE_URL}/requests`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email: email.value, comment: comments.value }),
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.statusText);
-      }
-      return response.json();
-    })
-    .then(function (data) {
-      modal.classList.add('is-open');
-      modalTitle.innerHTML = data.title;
-      modalMessage.innerHTML = data.message;
-    })
-
-    .catch(error => {
-      const errorMessage = error.message;
-      showErrorToast(errorMessage);
-    });
-}
