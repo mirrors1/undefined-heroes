@@ -121,3 +121,17 @@
         gap: 16px;
     }
 }
+
+@media screen and (max-width: 375px) {
+  .benefits__container {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .benefits__list {
+    width: 320px;
+  }
+  .benefits__list-item {
+    max-width: 320px;
+  }
+}

@@ -1,21 +1,15 @@
-.container-cov {
-  position: relative;
-}
-
-.container-covers {
-  position: absolute;
-  right: -800px;
-  left: 0;
+.covers {
   overflow: hidden;
-  width: 375px;
-  height: 508px;
+  /* display: flex; */
+  width: 100%;
+
   margin-bottom: 64px;
   backdrop-filter: blur(30px);
   background-image: linear-gradient(
       rgba(217, 217, 217, 0.04),
       rgba(217, 217, 217, 0.04)
     ),
-    url(../img/covers/mobile/Rectangle-13.png);
+    url(/img/covers/mobile/Rectangle-13.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,119 +18,151 @@
 @media screen and (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 2dppx),
   (min-resolution: 192dpi) {
-  .container-covers {
+  .covers {
     backdrop-filter: blur(30px);
     background-image: linear-gradient(
         rgba(217, 217, 217, 0.04),
         rgba(217, 217, 217, 0.04)
       ),
-      url(../img/covers/mobile/mobile-2x/Rectangle-13-mobile-2x.png);
+      url(/img/covers/mobile/mobile-2x/Rectangle-13-mobile-2x.png);
   }
 }
 
-.container-covers-list {
+.container-covers {
   display: flex;
-  height: 20vh;
-  gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  right: -900px;
+  align-content: center;
+  left: 0;
   transform: rotate(16deg);
 }
 
-.container-covers-list-item {
-  width: 282px;
-  height: 162px;
-  flex-shrink: 0;
-  margin-right: 10px; 
+.container-covers-list {
+  width: 375px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: calc(100% / 3); 
-  white-space: nowrap;
+  gap: 10px;
   animation-name: marqueeLine;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  transform: translateX(-20%);
+  animation: animateX50Y10 10000ms infinite 1000ms;
+}
+.container-covers-list-item {
+flex-shrink: 0;
+}
+
+.portfolio-list-img:hover {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  transition-delay: 100ms;
+
+  transform: scale(1.25);
+}
+.list-covers {
+  animation: animateX10Y50 10000ms infinite 1000ms;
 }
 @keyframes marqueeLine {
   from {
-    transform: translateX(-20%);
+    transform: translateY(-20%);
   }
-  
+
   to {
-    transform: translateX(-180%);
+    transform: translateX(-90%);
   }
 }
 
+@keyframes animateX50Y10 {
+  0% {
+    transform: translate(0, 0);
+  }
 
+  50% {
+    transform: translate(-200px, 0);
+  }
 
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes animateX10Y50 {
+  0% {
+    transform: translate(0, 0);
+  }
 
+  50% {
+    transform: translate(200px, 0);
+  }
 
+  100% {
+    transform: translate(0, 0);
+  }
+}
 
 @media screen and (min-width: 768px) {
-  .container-covers {
-    width: 768px;
-    height: 960px;
+  .covers {
     margin-bottom: 96px;
+
     backdrop-filter: blur(30px);
     background-image: linear-gradient(
         rgba(217, 217, 217, 0.04),
         rgba(217, 217, 217, 0.04)
       ),
-      url(../img/covers/laptop/Rectangle-13-laptop.png);
+      url(/img/covers/laptop/Rectangle-13-laptop.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .container-covers-list-item {
-    width: 544px;
-    height: 314px;
-  }
   .container-covers-list {
-    height: 40vh;
+    width: 768px;
   }
+
   @media screen and (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 2dppx),
     (min-resolution: 192dpi) {
-    .container-covers {
+    .covers {
       backdrop-filter: blur(30px);
       background-image: linear-gradient(
           rgba(217, 217, 217, 0.04),
           rgba(217, 217, 217, 0.04)
         ),
-        url(../img/covers/laptop/laptop-2x/Rectangle-13-laptop-2x.png);
+        url(/img/covers/laptop/laptop-2x/Rectangle-13-laptop-2x.png);
     }
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .container-covers {
-    width: 1440px;
-    height: 960px;
+  .covers {
     margin-bottom: 164px;
+
     backdrop-filter: blur(30px);
     background-image: linear-gradient(
         rgba(217, 217, 217, 0.04),
         rgba(217, 217, 217, 0.04)
       ),
-      url(../img/covers/Rectangle-13-comp.png);
+      url(/img/covers/Rectangle-13-comp.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
   }
   .container-covers-list {
-    height: 55vh;
+    width: 1440px;
   }
 
   @media screen and (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 2dppx),
     (min-resolution: 192dpi) {
-    .container-covers {
+    .covers {
       backdrop-filter: blur(30px);
       background-image: linear-gradient(
           rgba(217, 217, 217, 0.04),
           rgba(217, 217, 217, 0.04)
         ),
-        url(../img/covers/Rectangle-13-comp-2x.png);
+        url(/img/covers/Rectangle-13-comp-2x.png);
     }
   }
 }

@@ -2,7 +2,7 @@ import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
 new Accordion('#faq-accordion', {
-  duration: 600,
+  duration: 500,
   showOne: true,
   showMultiple: true,
   collapse: true,
@@ -22,20 +22,19 @@ function toggleAccordion(item) {
   const body = item.nextElementSibling;
   document.querySelectorAll('.accordion-body').forEach(content => {
     if (content !== body) {
-      console.log(body);
       content.classList.remove('visible');
       const siblingHeader = content.previousElementSibling;
       siblingHeader.querySelector('svg').style.transform = 'rotate(0deg)';
-      siblingHeader.querySelector('svg').style.transitionDuration = '500ms';
+      siblingHeader.querySelector('svg').style.transitionDuration = '450ms';
     }
   });
   if (body.classList.contains('visible')) {
     body.classList.remove('visible');
     item.querySelector('svg').style.transform = 'rotate(0deg)';
-    item.querySelector('svg').style.transitionDuration = '500ms';
+    item.querySelector('svg').style.transitionDuration = '450ms';
   } else {
     item.querySelector('svg').style.transform = 'rotate(180deg)';
-    item.querySelector('svg').style.transitionDuration = '500ms';
+    item.querySelector('svg').style.transitionDuration = '450ms';
     setTimeout(() => {
       body.classList.add('visible');
     }, 250);
