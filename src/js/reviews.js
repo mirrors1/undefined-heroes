@@ -4,8 +4,9 @@ import 'izitoast/dist/css/iziToast.min.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
-const reviewsSwiper = new Swiper('.reviews .swiper', {
+const reviewsSwiper = new Swiper('.reviews.swiper', {
   // Optional parameters
+  wrapperClass: 'review-swiper-wrapper',
   direction: 'horizontal',
   slideClass: 'my-slide',
 
@@ -78,7 +79,7 @@ async function loadData(url = REVIEWS_BASE_URL) {
 }
 
 document.addEventListener('DOMContentLoaded', loadReviews);
-const reviewsContainer = document.querySelector('.swiper-wrapper');
+const reviewsContainer = document.querySelector('.review-swiper-wrapper');
 
 async function loadReviews() {
   try {
