@@ -1,4 +1,4 @@
-const BASE_URL = 'https://portfolio-js.b.goit.study/api';
+const BASE_URL = 'https://portfolio-js.b.goit.study/api/request';
 const form = document.querySelector('.form');
 const modalTitle = document.querySelector('.modal-title');
 const modalMessage = document.querySelector('.modal-text');
@@ -8,7 +8,7 @@ const modal = document.querySelector('.backdrop');
 const closeButton = document.querySelector('.modal-close-btn');
 const succes = document.querySelector('.succes');
 const invalid = document.querySelector('.invalid');
-import pathErrorIcon from '../img/icons.svg#error';
+// import pathErrorIcon from '/img/icons.svg#error';
 
 import iziToast from 'izitoast';
 
@@ -30,8 +30,6 @@ inputComments.addEventListener('input', () => {
   }
 });
 
-// close modal
-
 closeButton.addEventListener('click', closeModal);
 
 function closeModal() {
@@ -50,30 +48,25 @@ window.onkeydown = function (event) {
   }
 };
 
-// verification of entered data
-
 const emailInput = document.getElementById('email');
-
 
 emailInput.addEventListener('blur', function () {
   const pattern = new RegExp(inputEmail.getAttribute('pattern'));
   const value = inputEmail.value;
-
-
-  if (pattern.test(value)) {
-    console.log('Sucсes');
+  if (inputEmail.value === '') {
+    invalid.classList.add('invalid-is-hidden');
+    succes.classList.add('succes-is-hidden');
+    inputEmail.style.borderBottom = '1px solid';
+  } else if (pattern.test(value)) {
     inputEmail.style.borderBottom = '1px solid #3cbc81';
     succes.classList.remove('succes-is-hidden');
     invalid.classList.add('invalid-is-hidden');
-
   } else {
-    console.log('Invalid');
     succes.classList.add('succes-is-hidden');
     invalid.classList.remove('invalid-is-hidden');
     inputEmail.style.borderBottom = '1px solid var(--red)';
   }
 });
-
 
 // izitoast
 
@@ -90,10 +83,9 @@ function showErrorToast(message) {
     backgroundColor: 'white',
     theme: 'light',
     color: 'black',
-    iconColor:'white',
-    iconUrl: pathErrorIcon,
+    iconColor: 'white',
     position: 'center',
-    timeout: 100000,
+    timeout: 3000,
   });
 }
 
@@ -101,36 +93,41 @@ function showErrorToast(message) {
 
 form.addEventListener('submit', handlerSubmit);
 
-function handlerSubmit(event) {
-    event.preventDefault();
-    const { email, comments } = event.target.elements;
-  
-    if (!email.value.trim()) {
-      showErrorToast('Сomment cannot be empty');
-      return;
-    }
-  
-    fetch(`${BASE_URL}/requests`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email: email.value }),
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(response.statusText);
-        }
-        return response.json();
-      })
-      .then(function (data) {
-        modal.classList.add('is-open');
-        modalTitle.innerHTML = data.title;
-        modalMessage.innerHTML = data.message;
-      })
-  
-      .catch(error => {
-        const errorMessage = error.message;
-        showErrorToast(errorMessage);
-      });
+function handlerSubmit(e) {
+  e.preventDefault();
+
+  const { email, comments } = e.target.elements;
+
+  if (!email.value.trim()) {
+    showErrorToast('Email cannot be empty');
+    return;
   }
+
+  const data = {
+    email: email.value.trim(),
+    comment: comments.value.trim() || ' ',
+  };
+
+  fetch('https://portfolio-js.b.goit.study/api/requests', {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      modal.classList.add('is-open');
+      modalTitle.innerHTML = data.title;
+      modalMessage.innerHTML = data.message;
+    })
+    .catch(error => {
+      showErrorToast(error.message);
+    });
+}
