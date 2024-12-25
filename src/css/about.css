@@ -151,7 +151,7 @@ li.ac .ac-panel .ac-text .about-list-text-item:last-child {
   overflow: hidden;
 }
 
-.about-me-swiper ul.swiper-wrapper {
+.about-me-swiper ul.about-swiper-wrapper {
   width: 260px;
   display: flex;
   flex-direction: row;
@@ -160,7 +160,7 @@ li.ac .ac-panel .ac-text .about-list-text-item:last-child {
   gap: 0px;
 }
 
-.swiper-wrapper li.swiper-slide {
+.about-swiper-wrapper li.swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,7 +176,7 @@ li.ac .ac-panel .ac-text .about-list-text-item:last-child {
   transition: background-color 250ms ease-in-out;
 }
 
-.swiper-wrapper li.swiper-slide-active {
+.about-swiper-wrapper li.swiper-slide-active {
   background-color: #ed3b44;
   border: transparent;
 }
@@ -252,10 +252,13 @@ li.ac .ac-panel .ac-text .about-list-text-item:last-child {
   .paragr + .paragr {
     margin-top: 16px;
   }
-  .about-me-swiper ul.swiper-wrapper {
+  .about-me-swiper ul.swiper-about-swiper-wrapper {
     width: 600px;
   }
-  .swiper-wrapper li.swiper-slide {
+  .about-me-swiper ul.about-swiper-wrapper {
+    width: 600px;
+  }
+  .about-swiper-wrapper li.swiper-slide {
     width: 200px;
     height: 200px;
     font-size: 20px;
@@ -290,7 +293,7 @@ li.ac .ac-panel .ac-text .about-list-text-item:last-child {
   .paragr + .paragr {
     margin-top: 32px;
   }
-  .about-me-swiper ul.swiper-wrapper {
+  .about-me-swiper ul.about-swiper-wrapper {
     width: 1200px;
   }
 }

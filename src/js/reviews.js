@@ -7,6 +7,7 @@ import 'swiper/css/bundle';
 const reviewsSwiper = new Swiper('.reviews .swiper', {
   // Optional parameters
   direction: 'horizontal',
+  slideClass: 'my-slide',
 
   //Enables navigation through slides using mouse wheel.
   mousewheel: {
@@ -101,7 +102,7 @@ function createMarkupReviews(arr) {
   return arr
     .map(
       ({ author, avatar_url, review }) => `
-        <li class="reviews-item swiper-slide">
+        <li class="reviews-item my-swiper-slide">
             <img
                 class="reviews-item-img"
                 src="${avatar_url}"

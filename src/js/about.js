@@ -11,6 +11,7 @@ new Accordion('.about-accordion-container', {
 });
 
 const aboutMeSwiper = new Swiper('.about-me-swiper', {
+  wrapperClass: 'about-swiper-wrapper',
   modules: [Navigation, Keyboard],
   loop: true,
   slidesPerView: 2,
@@ -29,6 +30,8 @@ const aboutMeSwiper = new Swiper('.about-me-swiper', {
   },
 });
 
-document.querySelector('.swiper-button-next').addEventListener('click', e => {
-  aboutMeSwiper.slideNext();
-});
+document
+  .querySelector('.about-me-skills .swiper-button-next')
+  .addEventListener('click', e => {
+    aboutMeSwiper.slideNext();
+  });
