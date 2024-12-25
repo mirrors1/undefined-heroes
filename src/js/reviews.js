@@ -3,14 +3,13 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-
-const reviewsSwiper = new Swiper('.reviews.swiper', {
+const reviewsSwiper = new Swiper('.reviews-swiper', {
   // Optional parameters
-  wrapperClass: 'review-swiper-wrapper',
+  // wrapperClass: 'review-swipper-wrapper',
   direction: 'horizontal',
-  slideClass: 'my-slide',
-
+  // slideClass: 'review-swiper-slide,'
   //Enables navigation through slides using mouse wheel.
+
   mousewheel: {
     invert: true,
   },
@@ -41,7 +40,6 @@ const reviewsSwiper = new Swiper('.reviews.swiper', {
     },
   },
 });
-
 const reviewsSwiperButtonLeft = document.querySelector(
   '.reviews-swiper-button-left'
 );
@@ -53,7 +51,6 @@ const reviewsSwiperButtonRight = document.querySelector(
 const reviewsIconRight = reviewsSwiperButtonRight.querySelector(
   '.reviews-icon-right'
 );
-
 reviewsSwiper.on('slideChange', function () {
   if (reviewsSwiper.isBeginning) {
     reviewsSwiperButtonLeft.classList.remove('reviews-button-active');
@@ -70,22 +67,18 @@ reviewsSwiper.on('slideChange', function () {
     reviewsIconRight.classList.add('reviews-icon-active');
   }
 });
-
 const REVIEWS_BASE_URL = 'https://portfolio-js.b.goit.study/api/reviews';
-
 async function loadData(url = REVIEWS_BASE_URL) {
   const { data } = await axios(url);
   return data;
 }
-
 document.addEventListener('DOMContentLoaded', loadReviews);
-const reviewsContainer = document.querySelector('.review-swiper-wrapper');
-
+const reviewsContainer = document.querySelector('.reviews-list');
 async function loadReviews() {
   try {
     const data = await loadData();
     reviewsContainer.insertAdjacentHTML('beforeend', createMarkupReviews(data));
-    reviewsSwiper.updateSlides();
+    // reviewsSwiper.updateSlides();
   } catch (error) {
     iziToast.show({
       theme: 'dark',
@@ -98,12 +91,11 @@ async function loadReviews() {
     });
   }
 }
-
 function createMarkupReviews(arr) {
   return arr
     .map(
       ({ author, avatar_url, review }) => `
-        <li class="reviews-item my-swiper-slide">
+        <li class="reviews-item swiper-slide">
             <img
                 class="reviews-item-img"
                 src="${avatar_url}"
