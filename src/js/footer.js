@@ -14,8 +14,6 @@ import iziToast from 'izitoast';
 
 import 'izitoast/dist/css/iziToast.min.css';
 
-// entering data into input
-
 inputEmail.addEventListener('input', () => {
   const maxLength = 30;
   if (inputEmail.value.length > maxLength) {
