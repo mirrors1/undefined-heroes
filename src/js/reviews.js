@@ -95,7 +95,8 @@ function createMarkupReviews(arr) {
   return arr
     .map(
       ({ author, avatar_url, review }) => `
-        <li class="reviews-item swiper-slide">
+        <li class="reviews-item swiper-slide reviews-tooltip">
+        <span class="reviews-tooltiptext">"${review}"</span>
             <img
                 class="reviews-item-img"
                 src="${avatar_url}"
@@ -105,8 +106,9 @@ function createMarkupReviews(arr) {
             />
             <div class="reviews-item-card">
                 <h3 class="reviews-item-title">${author}</h3>
-                <p class="reviews-item-content">${review}</p>
-            </div>            
+                <p class="reviews-item-content">${review}                  
+                </p>
+            </div>                        
         </li>        
     `
     )
